@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/SINGLE-PASS-ASSEMBLER-FOR-SIC-master.iml" filepath="$PROJECT_DIR$/SINGLE-PASS-ASSEMBLER-FOR-SIC-master.iml" />
+      <module fileurl="file://$PROJECT_DIR$/SINGLE-PASS-ASSEMBLER-FOR-SIC-master/SINGLE-PASS-ASSEMBLER-FOR-SIC-master1.iml" filepath="$PROJECT_DIR$/SINGLE-PASS-ASSEMBLER-FOR-SIC-master/SINGLE-PASS-ASSEMBLER-FOR-SIC-master1.iml" />
+    </modules>
+  </component>
+</project>

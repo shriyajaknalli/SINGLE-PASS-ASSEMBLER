@@ -1,0 +1,18 @@
+COPY    START   1000
+
+        LDA     ALPHA
+
+        STA     BETA
+
+        LDCH    CHARZ
+
+        STCH     C1
+
+ALPHA   RESW    1
+CHARZ   BYTE C’Z’
+BETA    RESW    1
+C1      RESB    1
+        END
+
+
+
