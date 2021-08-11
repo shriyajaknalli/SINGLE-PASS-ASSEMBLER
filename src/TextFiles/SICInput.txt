@@ -1,4 +1,4 @@
-COPY    START   1000
+ COPY    START   1000
 
         LDA     ALPHA
 
@@ -13,6 +13,3 @@ CHARZ   BYTE C’Z’
 BETA    RESW    1
 C1      RESB    1
         END
-
-
-

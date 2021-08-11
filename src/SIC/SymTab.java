@@ -15,37 +15,49 @@ public class SymTab {
                 break;
             if(programStart){
                 if(Input.Program[i].equals("RESW")){
-                    allAddressSB.append(thisAddress).append(" ");
-                    symSB.append(Input.Program[i-1]).append(" ").append(thisAddress).append(" ").append(System.getProperty("line.separator"));
+                    allAddressSB.append(Integer.toHexString(thisAddress)).append(" ");
+                    symSB.append(Input.Program[i-1]).append(" ").append(Integer.toHexString(thisAddress)).append(" ").append(System.getProperty("line.separator"));
                     thisAddress = thisAddress + (Integer.parseInt(Input.Program[i+1]) * 3);
+                    //System.out.println(Integer.parseInt(Input.Program[i+1]) * 3);
+                   // System.out.println(Integer.toHexString(thisAddress));
                 }
                 if(Input.Program[i].equals("RESB")){
-                    allAddressSB.append(thisAddress).append(" ");
-                    symSB.append(Input.Program[i-1]).append(" ").append(thisAddress).append(" ").append(System.getProperty("line.separator"));
+                    allAddressSB.append(Integer.toHexString(thisAddress)).append(" ");
+                    symSB.append(Input.Program[i-1]).append(" ").append(Integer.toHexString(thisAddress)).append(" ").append(System.getProperty("line.separator"));
                     thisAddress = thisAddress + Integer.parseInt(Input.Program[i+1]);
+                     //thisAddress =Integer.parseInt(Integer.toHexString(thisAddress));
+                    //System.out.println(thisAddress);
                 }
                 if(Input.Program[i].equals("WORD")){
-                    allAddressSB.append(thisAddress).append(" ");
-                    symSB.append(Input.Program[i-1]).append(" ").append(thisAddress).append(" ").append(System.getProperty("line.separator"));
+                    allAddressSB.append(Integer.toHexString(thisAddress)).append(" ");
+                    symSB.append(Input.Program[i-1]).append(" ").append(Integer.toHexString(thisAddress)).append(" ").append(System.getProperty("line.separator"));
                     thisAddress = thisAddress + 3;
+                    //thisAddress =Integer.parseInt(Integer.toHexString(thisAddress));
+                   // System.out.println(Integer.toHexString(thisAddress));
                 }
                 if(Input.Program[i].equals("BYTE")){
-                    allAddressSB.append(thisAddress).append(" ");
-                    symSB.append(Input.Program[i-1]).append(" ").append(thisAddress).append(" ").append(System.getProperty("line.separator"));
+                    allAddressSB.append(Integer.toHexString(thisAddress)).append(" ");
+                    symSB.append(Input.Program[i-1]).append(" ").append(Integer.toHexString(thisAddress)).append(" ").append(System.getProperty("line.separator"));
                     thisAddress = thisAddress + 1;
+                    //thisAddress =Integer.parseInt(Integer.toHexString(thisAddress));
+                   // System.out.println(thisAddress);
                 }
                 if(OpTab.OpcodeMatcher(Input.Program[i])){
-                    allAddressSB.append(thisAddress).append(" ");
+                   // System.out.println((thisAddress));
+                    allAddressSB.append(Integer.toHexString(thisAddress)).append(" ");
                     thisAddress = thisAddress + 3;
+                    // thisAddress =Integer.parseInt(Integer.toHexString(thisAddress));
+                    //System.out.println((thisAddress));
                 }
             }
             if("START".equals(Input.Program[i])){
                 programName = Input.Program[i-1];                       //got the program name
-                startingAddress = Integer.parseInt(Input.Program[i+1]); //got the starting address
-                thisAddress = startingAddress;                                      //starting address is taken as the current address
+                startingAddress = Integer.parseInt(Input.Program[i+1],16); //got the starting address
+                thisAddress = startingAddress;                   //starting address is taken as the current address
                 programStart = true;                                               //set the boolean to start address calculating if statement written above
             }
         }
+        System.out.println((allAddressSB));
         allAddressArray = Ex6Methods.ToStringAndSplit(allAddressSB, " ");
         symAddressArray = Ex6Methods.ToStringAndSplit(symSB, " ");
         OpTab.OpcodeInOrderArray = Ex6Methods.ToStringAndSplit(OpTab.OpcodeInOrderSB, " ");
